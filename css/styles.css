@@ -1,0 +1,265 @@
+body {
+	font-family: 'Roboto Slab', serif;
+	color: #666;
+	font-size: 1.125rem;
+   /**18px**/
+	line-height: 1.5;
+}
+.container {
+	max-width: 87.5rem;
+	margin: auto;
+	padding: 0 1rem;
+}
+/** Typography **/
+/* --- Typographical Scales --- */
+/* Viewport is the browser window size. 1vw = 1% of viewport width. */
+header h1 {
+   /* 64px is 3.333% of 1920px */
+	font-size: 3.333vw;
+}
+header h2 {
+   /* 40px is 2.083% of 1920px */
+	font-size: 2.083vw;
+}
+.shine {
+   /* Call to action color */
+	color: #d4a373;
+}
+h1, h2, h3 {
+	font-family: 'DM Serif Display', serif;
+	color: #588157;
+}
+h2, h3 {
+	margin-bottom: 1.5rem;
+	line-height: 1;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.5rem;
+}
+p {
+	margin-bottom: 1.5rem;
+}
+a {
+	color: #040404;
+	text-decoration: none;
+	display: block;
+}
+.button a{
+	color: #040404;
+}
+.button {
+	border: none;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	background-color: #a3b18a;
+}
+.button:hover{
+	border: none;
+	color: #344e41;
+	background-color: #427ac1;
+}
+.comment {
+	width: 40%;
+	height: 100px;
+	padding: 10px;
+	background-color: #fefae0;
+}
+.logo {
+	width: 5%;
+}
+/** Mobile Menu **/
+nav {
+	position: relative;
+	padding: 1rem 0;
+	background: #fefae0;
+	box-shadow: 1px 1px 1px #e1e1e1;
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+}
+.logo-btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+/** style the toggle-btn **/
+.toggle-btn {
+	border: none;
+	outline: none;
+	background: transparent;
+}
+.toggle-btn:hover{
+	cursor: pointer;
+}
+/** style the svg **/
+.toggle-btn svg rect {
+	fill: #FCBF49;
+}
+.toggle-btn:hover svg rect {
+	fill: #F77F00 
+}
+/* default state: style nav and then move it off to the left of the canvas */
+.sliding-nav {
+	position: absolute;
+	left: -18.75rem;
+	top: 0;
+	z-index: 9999;
+	transition: left 1s ease-in-out;
+}
+.is-active .sliding-nav {
+	top: 0;
+	left: 0%;
+	transition: left 1s ease-in-out;
+}
+ul.menu {
+	background-color: #040404;
+	min-width: 18.75rem;
+	height: 100vh;
+   /** this forces to navigation to span all the way to bottom of the browser viewport **/
+	padding-top: 5rem;
+}
+.menu li {
+   /**The extra space from the line-height, makes this a larger tap area **/
+	line-height: 2.5rem;
+   /*40px*/
+	text-align: center;
+}
+.menu li a {
+	color: #e1e1e1;
+}
+.menu li a:hover, .menu li a:focus {
+	color: #427ac1;
+}
+/* layout */
+header {
+}
+/* Places the content image in the bg with the headings on top */
+.header-bg-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.header-bg-image {
+	opacity: 0.25;
+   /*The opacity property specifies the opacity/transparency of an element.*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+}
+.header-content {
+	height: 46.296vh;
+   /* Roughly 500px of 1080px high screen */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+main {
+   /* padding-top: 20px;
+	*/
+   /* overflow: hidden;
+	*/
+}
+section {
+	margin: 6rem 0;
+}
+article{
+	margin: 3rem 0;
+}
+article:last-of-type {
+	margin-bottom: 0;
+}
+article:nth-last-of-type(-n+2) {
+	padding-top: 3rem;
+}
+article img {
+	max-width: 100%;
+	margin-bottom: 3rem;
+	border: none;
+	-webkit-box-shadow: 3px 3px 7px #777;
+	-moz-box-shadow: 3px 3px 7px #777;
+}
+.image-container {
+	width: 50%;
+	margin: 0 auto;
+}
+footer {
+	padding: 3rem 0;
+	background-color: #a9a9a9;
+}
+footer ul {
+	font-size: 1.25rem;
+	text-align: left;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+footer ul li {
+	line-height: 2.5;
+   /* display: block;
+	*/
+   /*Makes the li selectable up the to the edge of the margins*/
+}
+@media only screen and (min-width:900px) {
+   /**Typography **/
+	h2 {
+		font-size: 3rem;
+	   /*48px*/
+   }
+	h3 {
+		font-size: 2.25rem;
+	   /*36px*/
+   }
+   /** Menu **/
+	.toggle-btn {
+		display: none;
+   }
+	.lg-flex{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+   }
+	.logo-btn-container {
+		order: -1;
+   }
+	.sliding-nav {
+		position: static;
+		width: auto;
+   }
+	ul.menu {
+		background-color: transparent;
+		height: auto;
+		display: flex;
+		padding-top: 0;
+   }
+	ul.menu li {
+		margin-left: 1rem;
+   }
+	ul.menu a {
+		color: #040404;
+   }
+	.outer-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+   }
+	.inner-container {
+		width: 48%;
+   }
+	footer ul {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+   }
+}
